@@ -53,7 +53,11 @@ function century(year) {
   
   return Math.ceil(year / 100);
 }
+// console.log(century(1601)); // 17
 
 
+function disemvowel(str) {
+  return str.split('').filter(el => !('aeiouAEIOU').includes(el)).join('');
+}
 
-console.log(century(1601)); // 18
+console.log(disemvowel("This website is for losers LOL!")); // Ths wbst s fr lsrs LL!

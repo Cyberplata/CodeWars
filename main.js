@@ -38,7 +38,7 @@ function fakeBin(x) {
 }
 // console.log('45385593107843568'.split('')[0]);
 // console.log(''.concat('0'));
-console.log(fakeBin('45385593107843568')); // '01011110001100111'
+// console.log(fakeBin('45385593107843568')); // '01011110001100111'
 
 /* Без .join('') выводил newString
 [
@@ -48,3 +48,12 @@ console.log(fakeBin('45385593107843568')); // '01011110001100111'
   '1', '1'
 ]
 */
+
+function century(year) {
+  
+  return Math.ceil(year / 100);
+}
+
+
+
+console.log(century(1601)); // 18

@@ -1,7 +1,7 @@
 //Найти сумму чисел
 // function findSum(numbers) {
 //   let sum = 0;
-  
+
 //   if (numbers.length === 0) return 0;
 //   for (let i = 0; i < numbers.length; i++) {
 //     sum += numbers[i];
@@ -34,7 +34,7 @@
 
 // 2ой способ через map
 function fakeBin(x) {
-   return x.split('').map(n => n > 5 ? 1 : 0).join('')
+  return x.split('').map(n => n > 5 ? 1 : 0).join('')
 }
 // console.log('45385593107843568'.split('')[0]);
 // console.log(''.concat('0'));
@@ -50,7 +50,7 @@ function fakeBin(x) {
 */
 
 function century(year) {
-  
+
   return Math.ceil(year / 100);
 }
 // console.log(century(1601)); // 17
@@ -60,4 +60,12 @@ function disemvowel(str) {
   return str.split('').filter(el => !('aeiouAEIOU').includes(el)).join('');
 }
 
-console.log(disemvowel("This website is for losers LOL!")); // Ths wbst s fr lsrs LL!
+// console.log(disemvowel("This website is for losers LOL!")); // Ths wbst s fr lsrs LL!
+
+
+// Digit*Digit
+function squareDigits(num) {
+  return +Array.from(String(num)).map(num => num ** 2).join('');
+}
+
+console.log(squareDigits(765)); // 49-36-25 (493625)

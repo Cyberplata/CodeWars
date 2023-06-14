@@ -68,4 +68,21 @@ function squareDigits(num) {
   return +Array.from(String(num)).map(num => num ** 2).join('');
 }
 
-console.log(squareDigits(765)); // 49-36-25 (493625)
+// console.log(squareDigits(765)); // 49-36-25 (493625)
+
+
+//Counting sheep...
+function countSheeps(arrayOfSheep) {
+  return arrayOfSheep.join('').replace(/false/gi, '').length/4;
+  // return arrayOfSheep.filter(el => el).length; // 17
+  // return arrayOfSheep.filter(Boolean).length; // 17
+};
+
+const arrayOfSheep = [true,  true,  true,  false,
+  true,  true,  true,  true ,
+  true,  false, true,  false,
+  true,  false, false, true ,
+  true,  true,  true,  true ,
+  false, false, true,  true]
+
+console.log(countSheeps(arrayOfSheep)); // количечество true - 17 

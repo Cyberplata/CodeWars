@@ -60,4 +60,48 @@ function disemvowel(str) {
   return str.split('').filter(el => !('aeiou').includes(el)).join('');
 }
 
-console.log(disemvowel("This website is for losers LOL!"));
+// console.log(disemvowel("This website is for losers LOL!"));
+
+
+// return -1 * (sumFinal - array.reduce((acc, item) => {
+//   const sum = acc + item;
+//   return sum;
+// }, 0))
+
+
+
+function sumArray(array) {
+  if (!array || array.length <= 2) return 0;
+
+  const maxVal = Math.max(...array);
+  const minVal = Math.min(...array);
+  const sumFinal = maxVal + minVal
+  console.log('maxVal ', maxVal);
+  console.log('minVal ', minVal);
+  console.log('sumFinal ', sumFinal);
+  return array.reduce((acc, item) => {
+    return acc + item;
+  }, 0) - sumFinal;
+}
+
+
+  // function sumArray(array) {
+    
+  //   if (!array || array.length <= 2) return 0
+  //   //[...array - Math.max(...array) - Math.min(...array)]
+  //   // array.reduce((acc, item) => acc + item, 0)
+  //   const sumVal = array.reduce((acc, item) => {
+  //     return acc + item;
+  //   }, 0)  
+  //   console.log(sumVal)
+
+  // }
+
+
+  console.log(sumArray(null)); // 0
+  console.log(sumArray([])); // 0
+  console.log(sumArray([ 3 ])); // 0
+  console.log(sumArray([ 3, 5 ])); // 0
+  console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
+  console.log(sumArray([ 0, 1, 6, 10, 10 ])); // 17
+

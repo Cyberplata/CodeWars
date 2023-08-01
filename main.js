@@ -76,9 +76,9 @@ function sumArray(array) {
   const maxVal = Math.max(...array);
   const minVal = Math.min(...array);
   const sumFinal = maxVal + minVal
-  console.log('maxVal ', maxVal);
-  console.log('minVal ', minVal);
-  console.log('sumFinal ', sumFinal);
+  // console.log('maxVal ', maxVal);
+  // console.log('minVal ', minVal);
+  // console.log('sumFinal ', sumFinal);
   return array.reduce((acc, item) => {
     return acc + item;
   }, 0) - sumFinal;
@@ -98,10 +98,31 @@ function sumArray(array) {
   // }
 
 
-  console.log(sumArray(null)); // 0
-  console.log(sumArray([])); // 0
-  console.log(sumArray([ 3 ])); // 0
-  console.log(sumArray([ 3, 5 ])); // 0
-  console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
-  console.log(sumArray([ 0, 1, 6, 10, 10 ])); // 17
+  // console.log(sumArray(null)); // 0
+  // console.log(sumArray([])); // 0
+  // console.log(sumArray([ 3 ])); // 0
+  // console.log(sumArray([ 3, 5 ])); // 0
+  // console.log(sumArray([ 6, 2, 1, 8, 10 ])); // 16
+  // console.log(sumArray([ 0, 1, 6, 10, 10 ])); // 17
 
+
+
+
+  function countPositivesSumNegatives(input) {
+    let countOfPositive = 0;
+    let sumOfNegative = 0;
+    
+    if (input === null) return [];
+    if (input.filter(n => n !== 0).length === 0) return [];
+    
+    for (const n of input) {
+      if(n > 0) countOfPositive += 1;
+      if(n < 0) sumOfNegative += n;
+    }
+    return [countOfPositive, sumOfNegative];
+  }
+
+  console.log(countPositivesSumNegatives([null])); // [3]
+console.log(countPositivesSumNegatives([1, 2, 3, null])); // [3]
+console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15])); // [10, -65]
+console.log(countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14])); // [8, -50]

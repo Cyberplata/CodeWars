@@ -122,7 +122,62 @@ function sumArray(array) {
     return [countOfPositive, sumOfNegative];
   }
 
-  console.log(countPositivesSumNegatives([null])); // [3]
-console.log(countPositivesSumNegatives([1, 2, 3, null])); // [3]
-console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15])); // [10, -65]
-console.log(countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14])); // [8, -50]
+//   console.log(countPositivesSumNegatives([null])); // [3]
+// console.log(countPositivesSumNegatives([1, 2, 3, null])); // [3]
+// console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15])); // [10, -65]
+// console.log(countPositivesSumNegatives([0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14])); // [8, -50]
+
+
+
+function countBy(x, n) {
+  let z = [];
+
+  for (let i = 1; i <= n; i++) {
+    z.push(x * i)
+  }
+
+  return z;
+}
+
+// console.log(countBy(1,10)); // [1,2,3,4,5,6,7,8,9,10]
+// console.log(countBy(2,5)); // [2,4,6,8,10]
+// console.log(countBy(3,21)); // [3, 6, 9, 12, 15, 18, 21]
+
+
+
+
+// function XO(str) {
+//   let countO = 0;
+//   let countX = 0;
+  
+//   for (let i = 0; i < str.length; i++) {
+//     if (str[i].toLowerCase() === 'o') {
+//       countO++;
+//     }
+//     if (str[i].toLowerCase() === 'x') {
+//       countX++;
+//     }
+//   }
+//   if (countO === countX) return true;
+//   else return false;
+// }
+
+function XO(str) {
+  let x = str.match(/x/gi);
+  console.log(x); // [ 'x', 'x' ]
+  console.log(x.length); // 2
+
+  let o = str.match(/o/gi);
+  console.log(o); // [ 'O', 'o' ]
+  console.log(o.length); // 2
+
+  return (x && x.length) === (o && o.length);
+}
+
+// console.log(XO('xo')); // true
+console.log(XO("xxOo")); // true
+// console.log(XO("xxxm")); // false
+// console.log(XO("Oo")); // false
+// console.log(XO("ooom")); // false
+// console.log(XO("zpzpzpp")); // true
+// console.log(XO("zzoo")); // false

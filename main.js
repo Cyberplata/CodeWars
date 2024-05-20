@@ -164,18 +164,18 @@ function countBy(x, n) {
 
 function XO(str) {
   let x = str.match(/x/gi);
-  console.log(x); // [ 'x', 'x' ]
-  console.log(x.length); // 2
+  // console.log(x); // [ 'x', 'x' ]
+  // console.log(x.length); // 2
 
   let o = str.match(/o/gi);
-  console.log(o); // [ 'O', 'o' ]
-  console.log(o.length); // 2
+  // console.log(o); // [ 'O', 'o' ]
+  // console.log(o.length); // 2
 
   return (x && x.length) === (o && o.length);
 }
 
 // console.log(XO('xo')); // true
-console.log(XO("xxOo")); // true
+// console.log(XO("xxOo")); // true
 // console.log(XO("xxxm")); // false
 // console.log(XO("Oo")); // false
 // console.log(XO("ooom")); // false
